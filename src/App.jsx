@@ -17,14 +17,23 @@ import Usefetch from './customhooks/Usefetch'
 import Dropdownfilter from './components/Dropdownfilter/Dropdownfilter'
 import Randomcolour from './components/Randomcolour/Randomcolour'
 import Tabchange from './components/Tabchange/Tabchange'
+import Mainconnect from './FinalTreeView/Mainconnect'
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom'
+import Scrolldiv from './Pages/Scrolldiv'
+import ImageTray from './components/ImageTray/ImageTray'
 
 
-
+//
+//Change Page
+//</button>
+//
 
 function App() {
   
   return (
     <>
+    <BrowserRouter>
+    
       <TictacToe/>
       <Accordion/>
       <Starrating/>
@@ -41,6 +50,15 @@ function App() {
       <Dropdownfilter/>
       <Randomcolour/>
       <Tabchange/>
+      <Mainconnect/>
+     
+      <Routes>
+        <Route exact path='/scrolldiv' element={<Scrolldiv/>}/>
+       </Routes>
+       <Link to='/scrolldiv'><button className='bg-black p-3 text-white'>ScrollDiv</button></Link>
+      </BrowserRouter>
+
+      <ImageTray/>
       
     </>
   )
